@@ -1,5 +1,5 @@
 [project]
-name = "api-svr-py"
+name = "visitor-badge-svr"
 version = "0.1.0"
 description = "A small FastAPI + MySQL count service, ported from api-svr behavior."
 readme = "README.md"

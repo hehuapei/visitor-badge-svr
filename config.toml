@@ -1,16 +1,27 @@
 [server]
+# 服务监听端口
 port = 8080
+# Uvicorn worker 进程数
 workers = 1
 
 [mysql]
+# MySQL 主机地址
 host = "127.0.0.1"
+# MySQL 端口
 port = 3306
+# 数据库名
 database = "api-svr"
+# 数据库用户名
 username = "root"
+# 数据库密码
 password = "110"
+# 连接池常驻连接数
 pool_size = 20
+# 连接池允许的额外溢出连接数
 max_overflow = 40
+# 从连接池获取连接的超时时间（秒）
 pool_timeout = 30
+# 连接回收时间，超过后会重建连接（秒）
 pool_recycle = 1800
-# 如果设置了 url，会优先于上面拆分的 MySQL 配置项
+# 完整数据库连接串；如果设置，会优先于上面的拆分配置
 # url = "mysql+pymysql://root:110@127.0.0.1:3306/api-svr?charset=utf8mb4"
