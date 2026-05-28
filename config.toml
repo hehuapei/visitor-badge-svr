@@ -1,0 +1,16 @@
+[server]
+port = 8080
+workers = 1
+
+[mysql]
+host = "127.0.0.1"
+port = 3306
+database = "api-svr"
+username = "root"
+password = "110"
+pool_size = 20
+max_overflow = 40
+pool_timeout = 30
+pool_recycle = 1800
+# 如果设置了 url，会优先于上面拆分的 MySQL 配置项
+# url = "mysql+pymysql://root:110@127.0.0.1:3306/api-svr?charset=utf8mb4"

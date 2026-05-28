@@ -1,0 +1,38 @@
+[project]
+name = "api-svr-py"
+version = "0.1.0"
+description = "A small FastAPI + MySQL count service, ported from api-svr behavior."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+  { name = "Open source contributors" }
+]
+dependencies = [
+  "fastapi==0.115.12",
+  "uvicorn==0.34.2",
+  "sqlalchemy==2.0.40",
+  "pymysql==1.1.1",
+  "cryptography==46.0.3"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.5",
+  "httpx==0.28.1",
+  "ruff==0.12.10"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
