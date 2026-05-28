@@ -1,12 +1,17 @@
 import os
-import tomllib
 from pathlib import Path
+from typing import Optional
+
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 
 DEFAULT_CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.toml"
 
 
 class Settings:
-    def __init__(self, config_path: Path | None = None) -> None:
+    def __init__(self, config_path: Optional[Path] = None) -> None:
         path = Path(os.getenv("CONFIG_FILE") or config_path or DEFAULT_CONFIG_PATH)
         with path.open("rb") as f:
             data = tomllib.load(f)

@@ -41,7 +41,7 @@
 
 建议环境：
 
-- Python `3.12+`
+- Python `3.9+`
 - MySQL `8.x`
 - Linux 服务器，建议配合 systemd 或其他进程管理器
 

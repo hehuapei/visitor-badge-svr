@@ -3,7 +3,7 @@ name = "api-svr-py"
 version = "0.1.0"
 description = "A small FastAPI + MySQL count service, ported from api-svr behavior."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [
   { name = "Open source contributors" }
@@ -13,7 +13,8 @@ dependencies = [
   "uvicorn==0.34.2",
   "sqlalchemy==2.0.40",
   "pymysql==1.1.1",
-  "cryptography==46.0.3"
+  "cryptography==46.0.3",
+  "tomli==2.3.0; python_version < '3.11'"
 ]
 
 [project.optional-dependencies]
