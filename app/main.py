@@ -51,6 +51,10 @@ def create_app() -> FastAPI:
     ):
         return {"value": service.count(keyword, action)}
 
+    @app.get("/stats")
+    def stats(service: CountService = Depends(get_count_service)):
+        return {"total_keys": service.total_keys()}
+
     return app
 
 

@@ -1,4 +1,4 @@
-from sqlalchemy import select, text, update
+from sqlalchemy import func, select, text, update
 
 from app.models import Count
 
@@ -10,6 +10,10 @@ class CountRepository:
     def find_by_keyword(self, keyword: str):
         statement = select(Count).where(Count.keyword == keyword).limit(1)
         return self.session.execute(statement).scalars().first()
+
+    def count_keywords(self) -> int:
+        statement = select(func.count()).select_from(Count)
+        return int(self.session.execute(statement).scalar_one())
 
     def insert_initial(self, keyword: str, total: int, now: int):
         count = Count(keyword=keyword, total=total, create_time=now, update_time=now)

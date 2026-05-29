@@ -31,6 +31,9 @@ class CountService:
                 raise
             return int(count.total)
 
+    def total_keys(self) -> int:
+        return self.repository.count_keywords()
+
     def _update_count(self, keyword: str) -> int:
         total = self.repository.increment_existing(keyword, int(time.time() * 1000))
         if total is not None:
